@@ -1,0 +1,6 @@
+[{"question": "What is the category of whale?",
+"options": ["Insect", "Amphibian", "Mammal", "Fish"],
+"Correct":3},
+{"question":"What cover earth surface more?",
+"options":["Land", "water"],
+"Correct":2}]
