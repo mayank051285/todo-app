@@ -12,29 +12,29 @@ while True:
     user_input = input(prompt).title()
 
     if user_input.startswith("Add"):
-        todos = functions.get_todos("todo.txt")
+        todos = functions.get_todos()
         todo = user_input[4:] + "\n"
         todos.append(todo)
-        functions.write_todo("todo.txt", todos)
+        functions.write_todo(todos)
 
     elif user_input.startswith("Show"):
-        todos = functions.get_todos("todo.txt")
+        todos = functions.get_todos()
         new_todos = [item.strip("\n") for item in todos]
         for index, items in enumerate(new_todos):
             row = f"{index + 1}.{items}"
             print(row)
 
     elif user_input.startswith("Complete"):
-        todos = functions.get_todos("todo.txt")
+        todos = functions.get_todos()
         if len(todos) == 0:
             print("No more todos")
         else:
             option = int(user_input[9:]) - 1
             todos.pop(option)
-            functions.write_todo("todo.txt", todos)
+            functions.write_todo(todos)
 
     elif user_input.startswith("Replace"):
-        todos = functions.get_todos("todo.txt")
+        todos = functions.get_todos()
         new_todos = [item.strip("\n") for item in todos]
         if len(new_todos) == 0:
             print("No more todos")
@@ -43,7 +43,7 @@ while True:
                 option = int(user_input[8:]) - 1
                 newItem = input("Enter new item ")
                 todos[option] = newItem + "\n"
-                functions.write_todo("todo.txt", todos)
+                functions.write_todo(todos)
             except ValueError:
                 print(f"your command {user_input} is not valid")
 

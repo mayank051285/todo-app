@@ -1,10 +1,13 @@
-def get_todos(filename):
+FILEPATH = "todo.txt"
+
+
+def get_todos(filename=FILEPATH):
     with open(filename, "r") as file_local:
         todos_local = file_local.readlines()
     return todos_local
 
 
-def write_todo(filename, todos_local):
+def write_todo(todos_local, filename=FILEPATH):
     with open(filename, "w") as file_local:
         file_local.writelines(todos_local)
 
