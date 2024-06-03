@@ -8,7 +8,7 @@ while True:
             # todos = file.readlines()
             # file.close()
             # Replacing file operations to with context manager
-            with open("todo.txt", "r") as file:
+            with open("../todo.txt" , "r") as file:
                 todos = file.readlines()
 
             todo = input("Enter a TODO: ").title() + "\n"
@@ -18,7 +18,7 @@ while True:
             # file.writelines(todos)
             # file.close()
             # Replacing file operations to with context manager
-            with open('todo.txt', 'w') as file:
+            with open('../todo.txt' , 'w') as file:
                 file.writelines(todos)
         case "Show":
             #
@@ -26,7 +26,7 @@ while True:
             # todos = file.readlines()
             # adding with context
             # trying to file discriptior to remove /n
-            with open("todo.txt" , "r") as files:
+            with open("../todo.txt" , "r") as files:
                 todos = files.readlines()
             new_todos = [item.strip("\n") for item in todos]
             # new_todos = []
@@ -40,7 +40,7 @@ while True:
             # file = open('todo.txt' , 'r')
             # todos = file.readlines()
             # file.close()
-            with open('todo.txt' , 'r') as file:
+            with open('../todo.txt' , 'r') as file:
                 todos = file.readlines()
                 if len(todos) != 0:
                     for index , items in enumerate(todos):
@@ -51,13 +51,13 @@ while True:
                     # file = open('todo.txt' , 'w')
                     # file.writelines(todos)
                     # file.close()
-                    with open("todo.txt", "w") as file:
+                    with open("../todo.txt" , "w") as file:
                         file.writelines(todos)
                 else:
                     print("No item to delete")
 
         case "Replace":
-            with open("todo.txt" , "r") as file:
+            with open("../todo.txt" , "r") as file:
                 todos = file.readlines()
                 new_todos = [item.strip("\n") for item in todos]
 
@@ -68,7 +68,7 @@ while True:
                 option = int(input("Enter the item number to be replace ")) - 1
                 newItem = input("Enter new item ")
                 todos[option] = newItem + "\n"
-                with open("todo.txt" , "w") as file:
+                with open("../todo.txt" , "w") as file:
                     todos = file.writelines(todos)
             else:
                 print("No item to edit")

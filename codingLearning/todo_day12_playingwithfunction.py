@@ -15,20 +15,20 @@ while True:
     user_input = input(prompt).title()
 
     if user_input.startswith("Add"):
-        todos = get_todos("todo.txt")
+        todos = get_todos("../todo.txt")
         todo = user_input[4:] + "\n"
         todos.append(todo)
         write_todo(todos)
 
     elif user_input.startswith("Show"):
-        todos = get_todos("todo.txt")
+        todos = get_todos("../todo.txt")
         new_todos = [item.strip("\n") for item in todos]
         for index, items in enumerate(new_todos):
             row = f"{index + 1}.{items}"
             print(row)
 
     elif user_input.startswith("Complete"):
-        todos = get_todos("todo.txt")
+        todos = get_todos("../todo.txt")
         if len(todos) == 0:
             print("No more todos")
         else:
@@ -37,7 +37,7 @@ while True:
             write_todo("todo.txt", todos)
 
     elif user_input.startswith("Replace"):
-        todos = get_todos("todo.txt")
+        todos = get_todos("../todo.txt")
         new_todos = [item.strip("\n") for item in todos]
         if len(new_todos) == 0:
             print("No more todos")

@@ -4,16 +4,16 @@ while True:
     user_input = input(prompt).title()
     match user_input:
         case "Add":
-            file = open('todo.txt' , 'r')
+            file = open('../todo.txt' , 'r')
             todos = file.readlines()
             file.close()
             todo = input("Enter a TODO: ").title() + "\n"
             todos.append(todo)
-            file = open('todo.txt' , 'w')
+            file = open('../todo.txt' , 'w')
             file.writelines(todos)
             file.close()
         case "Show":
-            file = open("todo.txt" , "r")
+            file = open("../todo.txt" , "r")
             todos = file.readlines()
             # trying to file discriptior to remove /n
             new_todos = [item.strip("\n") for item in todos]
@@ -26,7 +26,7 @@ while True:
                 row = f"{index + 1}.{items}"
                 print(row)
         case "Delete":
-            file = open('todo.txt' , 'r')
+            file = open('../todo.txt' , 'r')
             todos = file.readlines()
             file.close()
             if len(todos) != 0:
@@ -34,7 +34,7 @@ while True:
                     print(f"{index}.{items}")
                 option = int(input("Enter the item number to delete"))
                 todos.pop(option)
-                file = open('todo.txt' , 'w')
+                file = open('../todo.txt' , 'w')
                 file.writelines(todos)
                 file.close()
             else:
